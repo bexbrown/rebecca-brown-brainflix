@@ -1,0 +1,134 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.header {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1.5rem;
+    }
+
+    @include desktop {
+        @include contain;
+    }
+
+    &__link {
+        height: 1.5rem;
+        width: 7.5rem;
+        border: solid black 2px;
+    }
+
+    &__form {
+        width: 100%;
+
+        @include tablet {
+            display: flex;
+            align-items: center;
+            justify-content: right;
+        }
+    }
+
+    &__div {
+        display: flex;
+        width: 100%;
+        padding: 1rem 0;
+
+
+        @include tablet {
+            flex-basis: 33.333%;
+        }
+
+        @include desktop {
+            flex-basis: 25%;
+        }
+    }
+
+    &__input {
+        height: 2.25rem;
+        margin-right: 1rem;
+        width: calc(100% - 4.25rem);
+        border-radius: 4px;
+        border: none;
+        outline: solid 2px $secondary-grey;
+        padding-left: 2rem;
+
+        @include tablet {
+            height: 2.5rem;
+            margin: 0;
+            width: 100%;
+        }
+    }
+
+    &__input::placeholder {
+        color: $secondary-dark;
+    }
+
+    &__input:focus {
+        outline: 2px solid $primary-accent;
+    }
+
+    &__icon--search {
+        background-image: url(../../assets/icons/search.svg);
+        height: 1rem;
+        width: 1rem;
+        color: $primary-dark;
+        position: absolute;
+    }
+
+    &__icon--upload {
+        background-image: url(../../assets/icons/upload.svg);
+        height: 1rem;
+        width: 1rem;
+        color: $primary-light;
+
+    }
+
+
+    &__button {
+        @include button;
+
+        @include tablet {
+            margin: 0 1.5rem;
+        }
+    }
+
+    &__button:hover {
+        background-color: $secondary-accent;
+    }
+
+    &__image {
+        background-color: $secondary-grey;
+        background-image: url(../../assets/images/Mohan-muruge.jpg);
+        background-position: left;
+        background-size: cover;
+        height: 2.25rem;
+        width: 2.25rem;
+        border-radius: 50%;
+
+        @include tablet {
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+    }
+
+    &__image--mobile {
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__image--tablet {
+        display: none;
+
+        @include tablet {
+            display: inline-block;
+        }
+    }
+
+}
