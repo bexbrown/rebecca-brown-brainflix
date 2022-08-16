@@ -1,4 +1,5 @@
 @use "./fonts" as *;
+@use "./mixins" as *;
 
 h1 {
     font-size: 1.5rem;
@@ -13,34 +14,35 @@ h1 {
 
 h2 {
     font-size: 0.75rem;
-    line-height: 20px;
+    line-height: 1.25rem;
     font-weight: 700;
 }
 
 h3 {
     font-size: 0.8125rem;
-    line-height: 18px;
+    line-height: 1.125rem;
     font-weight: 700;
 
     @include tablet {
         font-size: 0.875rem;
-        line-height: 22px;
+        line-height: 1.375rem;
     }
 }
 
 p {
     font-size: 0.8125rem;
-    line-height: 18px;
+    line-height: 1.125rem;
     font-weight: 400;
 
     @include tablet {
         font-size: 0.875rem;
-        line-height: 22px;
+        line-height: 1.375rem;
     }
 }
 
 button {
+    font-family: $font-stack;
     font-size: 0.75rem;
-    line-height: 20px;
+    line-height: 1.25rem;
     font-weight: 700;
 }

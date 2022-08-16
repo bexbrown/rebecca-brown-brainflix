@@ -1,11 +1,12 @@
 import "./Header.scss";
+import Logo from "../../assets/logos/BrainFlix-logo.svg";
 
 function Header() {
 
     return (
         <header className="header">
             <a href="/" className="header__link">
-                <img src="../../assets/logos/BrainFlix-logo.svg" alt="brainflix logo" className="header__logo" />
+                <img src={Logo} alt="brainflix logo" className="header__logo" />
             </a>
             <form className="header__form">
                 <div className="header__div">
