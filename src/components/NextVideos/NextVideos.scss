@@ -1,0 +1,12 @@
+@use "../../styles/partials/colors" as *;
+
+
+.next-videos {
+    margin: 1rem;
+
+    &__heading {
+        text-transform: uppercase;
+        color: $primary-grey;
+        font-weight: 700;
+    }
+}

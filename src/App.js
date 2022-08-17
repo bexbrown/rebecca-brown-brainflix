@@ -3,11 +3,13 @@ import Header from "./components/Header/Header";
 import CurrentVideo from "./components/CurrentVideo/CurrentVideo";
 import Info from "./components/Info/Info";
 import Comments from "./components/Comments/Comments";
+import NextVideos from "./components/NextVideos/NextVideos";
 import data from "./data/video-details.json";
 import { v4 as uuid } from 'uuid';
 
 function App() {
 
+  console.log(data);
   return (
 
     <>
@@ -25,6 +27,7 @@ function App() {
         timestamp={data[0].timestamp}
       />
       <Comments />
+      <NextVideos />
     </>
   );
 }

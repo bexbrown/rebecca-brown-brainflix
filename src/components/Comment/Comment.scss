@@ -2,7 +2,8 @@
 @use "../../styles/partials/colors" as *;
 
 .comment {
-    padding: 1rem 1rem;
+    margin: 1rem;
+    padding-bottom: 1rem;
     display: flex;
 
     border-bottom: 2px solid $secondary-grey;
@@ -35,7 +36,6 @@
     &__heading {
         display: flex;
         justify-content: space-between;
-
     }
 
     &__date {
@@ -47,6 +47,7 @@
 
     &__text {
         margin: 0.5rem 0 0 0;
+
 
     }
 }

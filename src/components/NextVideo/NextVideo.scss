@@ -1,0 +1,26 @@
+@use "../../styles/partials/colors" as *;
+
+.next-video {
+    margin: 1rem;
+    display: flex;
+
+    &__image {
+        background-color: $secondary-grey;
+        border: solid black 2px;
+        border-radius: 4px;
+        margin-right: 1rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        margin-bottom: 0.5rem;
+    }
+
+    &__channel {
+        font-size: 0.8125rem;
+    }
+}
