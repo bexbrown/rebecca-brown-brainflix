@@ -1,19 +1,50 @@
 @use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
 
 .next-video {
     margin: 1rem;
     display: flex;
+    align-items: center;
+
+
+    @include tablet {
+        margin: 1.5rem;
+    }
+
+    @include desktop {
+        border-left: 2px solid $secondary-grey;
+        margin: 0;
+        padding: 1.5rem;
+        justify-content: space-between;
+    }
 
     &__image {
         background-color: $secondary-grey;
         border: solid black 2px;
         border-radius: 4px;
         margin-right: 1rem;
+        height: 4rem;
+
+        @include tablet {
+            flex-basis: 20%;
+        }
+
+        @include desktop {
+            flex-basis: 50%;
+        }
     }
 
     &__content {
         display: flex;
         flex-direction: column;
+
+        @include tablet {
+            flex-basis: 25%;
+        }
+
+        @include desktop {
+            flex-basis: 50%;
+        }
     }
 
     &__title {

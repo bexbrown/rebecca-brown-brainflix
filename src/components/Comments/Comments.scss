@@ -2,11 +2,10 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/fonts" as *;
 
-.comments {
 
+.comments {
     margin: 0 1rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid $secondary-grey;
 
     @include tablet {
         margin-top: 2rem;
@@ -14,82 +13,5 @@
 
     @include desktop {
         @include contain;
-    }
-
-
-    &__header {
-        margin-top: 1rem;
-        display: flex;
-    }
-
-    &__heading {
-        text-transform: uppercase;
-        color: $primary-grey;
-        font-weight: 700;
-    }
-
-
-    &__image {
-        // background-color: $secondary-grey;
-        // object-fit: cover;
-        // object-position: left;
-        // height: 2.25rem;
-        // width: 2.25rem;
-        // border-radius: 50%;
-        // margin: 1.5rem 1rem 0 0;
-
-
-        // @include tablet {
-        //     height: 2.5rem;
-        //     width: 2.5rem;
-        //     margin-right: 1.5rem;
-        // }
-        @include avatar;
-    }
-
-    &__div {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    &__form {
-        @include tablet {
-            display: flex;
-        }
-    }
-
-    &__input {
-        width: 100%;
-        resize: none;
-        margin: 0 0 1rem 0;
-        height: 6rem;
-        font-family: $font-stack;
-        border-radius: 4px;
-        border: none;
-        outline: solid 2px $secondary-grey;
-        background-color: $secondary-light;
-        padding: 0.75rem;
-
-        @include tablet {
-            height: 2.5rem;
-            margin-right: 1.5rem;
-        }
-    }
-
-    &__input::placeholder {
-        color: $secondary-dark;
-    }
-
-    &__input:focus {
-        outline: 2px solid $primary-accent;
-    }
-
-    &__button {
-        @include button;
-    }
-
-    &button:hover {
-        background-color: $secondary-accent;
     }
 }

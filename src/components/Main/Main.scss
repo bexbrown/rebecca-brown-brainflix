@@ -1,0 +1,14 @@
+@use "../../styles/partials/mixins" as *;
+
+.main {
+
+
+    &__content {
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+            @include contain;
+        }
+    }
+
+}

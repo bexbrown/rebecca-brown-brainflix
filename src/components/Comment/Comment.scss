@@ -2,15 +2,13 @@
 @use "../../styles/partials/colors" as *;
 
 .comment {
-    margin: 1rem;
-    padding-bottom: 1rem;
+
     display: flex;
 
     border-bottom: 2px solid $secondary-grey;
 
     @include tablet {
-        margin: 0 1.5rem;
-        padding: 1.5rem 0;
+        padding: 0.5rem 0;
     }
 
     @include desktop {
@@ -18,15 +16,15 @@
     }
 
     &__image {
-        display: inline-block;
         @include avatar;
         padding: 1rem;
-        margin: 0 1rem 0 0;
+        margin: 1rem 1rem 0 0;
     }
 
     &__div {
         display: flex;
         flex-direction: column;
+        margin-bottom: 1rem;
 
         @include tablet {
             width: 100%;
@@ -36,6 +34,7 @@
     &__heading {
         display: flex;
         justify-content: space-between;
+        margin-top: 1rem;
     }
 
     &__date {
