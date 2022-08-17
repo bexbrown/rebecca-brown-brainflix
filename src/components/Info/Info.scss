@@ -2,10 +2,10 @@
 @use "../../styles/partials/colors" as *;
 
 .info {
-    margin: 1rem;
+    margin: 0 1rem 1rem 1rem;
 
     @include tablet {
-        margin: 1.5rem;
+        margin: 0 1.5rem;
     }
 
     @include desktop {
@@ -13,6 +13,7 @@
     }
 
     &__title {
+        margin-top: 0;
         margin-bottom: 0.75rem;
     }
 

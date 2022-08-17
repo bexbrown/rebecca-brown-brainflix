@@ -5,9 +5,6 @@ import "./Info.scss";
 
 function Info(props) {
 
-    console.log("this is props:", props);
-
-
     function createTimestamp(timestamp) {
         let newDate = new Date(timestamp);
         let month = newDate.getMonth() + 1;

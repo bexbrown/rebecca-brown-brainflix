@@ -1,0 +1,25 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.video {
+    background-color: $secondary-dark;
+    padding: 0;
+    margin: 0;
+
+
+    &__image {
+        display: block;
+        width: 100%;
+
+
+        @include tablet {
+            padding: 0 1.5rem;
+        }
+
+        @include desktop {
+            padding: 0;
+            @include contain;
+        }
+    }
+
+}
