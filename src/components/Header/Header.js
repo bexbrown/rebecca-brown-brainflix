@@ -1,5 +1,6 @@
 import "./Header.scss";
 import Logo from "../../assets/logos/BrainFlix-logo.svg";
+import Avatar from "../../assets/images/Mohan-muruge.jpg";
 
 function Header() {
 
@@ -12,13 +13,13 @@ function Header() {
                 <div className="header__div">
                     <span className="header__icon--search"></span>
                     <input type="text" name="search" className="header__input" placeholder="Search" />
-                    <div className="header__image header__image--mobile"></div>
+                    <img className="header__image header__image--mobile" src={Avatar} alt="avatar" />
                 </div>
                 <div className="header__div">
                     <span className="header__icon--upload"></span>
                     <input type="submit" className="header__button" value="Upload" />
 
-                    <div className="header__image header__image--tablet"></div>
+                    <img className="header__image header__image--tablet" src={Avatar} alt="avatar" />
                 </div>
             </form>
         </header >

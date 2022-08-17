@@ -56,6 +56,8 @@
         border: none;
         outline: solid 2px $secondary-grey;
         padding-left: 2rem;
+        background-color: $secondary-light;
+
 
         @include tablet {
             height: 2.5rem;
@@ -102,18 +104,7 @@
     }
 
     &__image {
-        background-color: $secondary-grey;
-        background-image: url(../../assets/images/Mohan-muruge.jpg);
-        background-position: left;
-        background-size: cover;
-        height: 2.25rem;
-        width: 2.25rem;
-        border-radius: 50%;
-
-        @include tablet {
-            height: 2.5rem;
-            width: 2.5rem;
-        }
+        @include avatar;
     }
 
     &__image--mobile {

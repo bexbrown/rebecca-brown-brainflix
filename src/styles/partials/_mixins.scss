@@ -21,6 +21,7 @@
     }
 }
 
+
 @mixin button {
     background-color: $primary-accent;
     color: $primary-light;
@@ -32,5 +33,20 @@
 
     @include tablet {
         width: 9.375rem;
+    }
+}
+
+@mixin avatar {
+
+    background-color: $secondary-grey;
+    object-fit: cover;
+    object-position: left;
+    height: 2.25rem;
+    width: 2.25rem;
+    border-radius: 50%;
+
+    @include tablet {
+        height: 2.5rem;
+        width: 2.5rem;
     }
 }
