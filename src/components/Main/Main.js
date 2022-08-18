@@ -13,10 +13,8 @@ function Main() {
 
     const handleCurrentVideo = (clickedId) => {
         const selectedVideo = currentData.find((data) => data.id === clickedId);
-
         setCurrentVideo(selectedVideo);
     }
-
 
     return (
         <main className="main">
@@ -24,10 +22,10 @@ function Main() {
             <div className="main__content">
                 <div className="main__comments">
                     <Info
-                        data={currentVideo}
+                        currentVideo={currentVideo}
                     />,
                     <Comments
-                        data={currentVideo}
+                        currentVideo={currentVideo}
                     />
                 </div>
                 <NextVideos videos={nextData} handleCurrentVideo={handleCurrentVideo} />

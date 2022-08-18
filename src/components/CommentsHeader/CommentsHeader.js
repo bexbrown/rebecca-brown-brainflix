@@ -1,10 +1,10 @@
 import "./CommentsHeader.scss";
 import Avatar from "../../assets/images/Mohan-muruge.jpg";
 
-function CommentsHeader() {
+function CommentsHeader({ numOfComments }) {
     return (
         <section className="comments-header">
-            <h2 className="comments-header__count">3 Comments</h2>
+            <h2 className="comments-header__count">{numOfComments} Comments</h2>
             <div className="comments-header__header">
                 <img src={Avatar} alt="avatar"
                     className="comments-header__image comments-header__image--main" />

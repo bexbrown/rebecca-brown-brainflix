@@ -1,6 +1,6 @@
 import "./CurrentVideo.scss";
 
-function CurrentVideo(props) {
+function CurrentVideo({ image }) {
 
 
     return (
@@ -10,7 +10,7 @@ function CurrentVideo(props) {
         // </video>
 
         < div className="video" >
-            <img src={props.image} alt="main video" className="video__image" />
+            <img src={image} alt="main video" className="video__image" />
         </div >
     )
 

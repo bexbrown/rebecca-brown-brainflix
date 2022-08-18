@@ -1,18 +1,23 @@
 import "./Comments.scss";
 import CommentsHeader from "../CommentsHeader/CommentsHeader";
 import Comment from "../Comment/Comment";
+import { v4 as uuid } from 'uuid';
 
 
-function Comments(props) {
+function Comments({ currentVideo }) {
 
-    let comments = props.data.comments
+    let comments = currentVideo.comments
 
     return (
         <section className="comments">
-            <CommentsHeader />
-            <Comment comments={comments[0]} />
-            <Comment comments={comments[1]} />
-            <Comment comments={comments[2]} />
+            <CommentsHeader numOfComments={currentVideo.comments.length} />
+
+            {
+                comments.map((comment) => {
+                    return <Comment key={uuid()} comment={comment} />
+                })
+            }
+
         </section>
     )
 }
