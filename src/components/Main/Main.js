@@ -4,36 +4,33 @@ import Info from "../Info/Info";
 import Comments from "../Comments/Comments";
 import NextVideos from "../NextVideos/NextVideos";
 import currentData from "../../data/video-details.json";
-// import nextData from "../../data/videos.json";
-// import { v4 as uuid } from 'uuid';
+import nextData from "../../data/videos.json";
+import { useState } from "react";
 
 function Main() {
 
-    // let commentsData = currentData.map((data) => {
-    //     return data.comments;
-    // })
+    const [currentVideo, setCurrentVideo] = useState(currentData[0]);
+
+    const handleCurrentVideo = (clickedId) => {
+        const selectedVideo = currentData.find((data) => data.id === clickedId);
+
+        setCurrentVideo(selectedVideo);
+    }
 
 
     return (
         <main className="main">
-            <CurrentVideo image={currentData[0].image} />,
+            <CurrentVideo image={currentVideo.image} />,
             <div className="main__content">
                 <div className="main__comments">
                     <Info
-                        // key={uuid()}
-                        data={currentData[0]}
-                    // title={currentData[0].title}
-                    // channel={currentData[0].channel}
-                    // description={currentData[0].description}
-                    // views={currentData[0].views}
-                    // likes={currentData[0].likes}
-                    // timestamp={currentData[0].timestamp}
+                        data={currentVideo}
                     />,
                     <Comments
-                        data={currentData[0]}
+                        data={currentVideo}
                     />
                 </div>
-                <NextVideos />
+                <NextVideos videos={nextData} handleCurrentVideo={handleCurrentVideo} />
             </div>
         </main>
     )

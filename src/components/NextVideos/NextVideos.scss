@@ -5,6 +5,11 @@
 .next-videos {
     margin: 1rem;
 
+    @include tablet {
+        margin: 0 1.5rem;
+        padding: 1rem 0;
+    }
+
     @include desktop {
         border-left: 2px solid $secondary-grey;
         margin: 0;
@@ -14,6 +19,10 @@
         text-transform: uppercase;
         color: $primary-grey;
         font-weight: 700;
+
+        @include desktop {
+            margin-left: 1.5rem;
+        }
     }
 
 
