@@ -16,6 +16,8 @@ function Main() {
         setCurrentVideo(selectedVideo);
     }
 
+    const filteredVideos = nextData.filter((video) => video.id !== currentVideo.id)
+
     return (
         <main className="main">
             <CurrentVideo image={currentVideo.image} />,
@@ -28,7 +30,7 @@ function Main() {
                         currentVideo={currentVideo}
                     />
                 </div>
-                <NextVideos videos={nextData} handleCurrentVideo={handleCurrentVideo} />
+                <NextVideos videos={filteredVideos} handleCurrentVideo={handleCurrentVideo} />
             </div>
         </main>
     )

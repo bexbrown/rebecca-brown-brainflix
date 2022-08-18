@@ -17,7 +17,6 @@ function Comments({ currentVideo }) {
                     return <Comment key={uuid()} comment={comment} />
                 })
             }
-
         </section>
     )
 }
