@@ -11,7 +11,7 @@ function NextVideos({ videos, handleCurrentVideo }) {
                 return (
                     <NextVideo key={video.id} video={video} handleCurrentVideo={handleCurrentVideo}></NextVideo>
                 )
-            })};
+            })}
         </section>
     )
 }

@@ -5,7 +5,7 @@ import Avatar from "../../assets/images/Mohan-muruge.jpg";
 function Header() {
 
     return (
-        <header className="header">
+        <header className="header" id="header">
             <a href="/" className="header__link">
                 <img src={Logo} alt="brainflix logo" className="header__logo" />
             </a>
