@@ -29,6 +29,10 @@
         @include tablet {
             width: 100%;
         }
+
+        @include desktop {
+            margin: 0;
+        }
     }
 
     &__heading {

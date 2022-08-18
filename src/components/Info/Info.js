@@ -24,24 +24,24 @@ function Info(props) {
 
     return (
         <section className="info">
-            <h1 className="info__title">{props.title}</h1>
+            <h1 className="info__title">{props.data.title}</h1>
             <div className="info__details">
                 <div className="info__divider">
-                    <h2 className="info__channel ">By {props.channel}</h2>
-                    <span className="info__timestamp info__item--grey">{createTimestamp(props.timestamp)}</span>
+                    <h2 className="info__channel ">By {props.data.channel}</h2>
+                    <span className="info__timestamp info__item--grey">{createTimestamp(props.data.timestamp)}</span>
                 </div>
                 <div className="info__divider">
                     <span className="info__views info__item--grey">
                         <span className="info__icon info__icon--views"></span>
-                        {props.views}
+                        {props.data.views}
                     </span>
                     <span className="info__likes info__item--grey">
                         <span className="info__icon info__icon--likes"></span>
-                        {props.likes}
+                        {props.data.likes}
                     </span>
                 </div>
             </div>
-            <p className="info__description">{props.description}</p>
+            <p className="info__description">{props.data.description}</p>
         </section>
     )
 

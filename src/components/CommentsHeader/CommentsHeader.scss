@@ -66,6 +66,7 @@
     }
 
     &__button {
+        min-width: 9.3rem;
         @include button;
     }
 

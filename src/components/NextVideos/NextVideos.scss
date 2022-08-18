@@ -1,12 +1,20 @@
 @use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
 
 
 .next-videos {
     margin: 1rem;
+
+    @include desktop {
+        border-left: 2px solid $secondary-grey;
+        margin: 0;
+    }
 
     &__heading {
         text-transform: uppercase;
         color: $primary-grey;
         font-weight: 700;
     }
+
+
 }
