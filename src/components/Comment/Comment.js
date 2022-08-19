@@ -1,4 +1,5 @@
 import "./Comment.scss";
+import createTimestamp from "../utility/utils";
 
 function Comment({ comment }) {
     console.log(comment);
@@ -8,7 +9,7 @@ function Comment({ comment }) {
             <div className="comment__div">
                 <div className="comment__heading">
                     <h2 className="comment__name">{comment.name}</h2>
-                    <span className="comment__date">{comment.timestamp}</span>
+                    <span className="comment__date">{createTimestamp(comment.timestamp)}</span>
                 </div>
                 <p className="comment__text">{comment.comment}</p>
             </div >
