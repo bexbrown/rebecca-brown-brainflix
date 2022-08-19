@@ -20,7 +20,9 @@ function Main() {
 
     return (
         <main className="main">
-            <CurrentVideo image={currentVideo.image} />,
+
+                <CurrentVideo image={currentVideo.image} />,
+
             <div className="main__content">
                 <div className="main__comments">
                     <Info

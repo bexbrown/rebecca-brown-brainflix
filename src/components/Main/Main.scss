@@ -3,13 +3,12 @@
 
 .main {
 
-
+ 
     &__content {
         @include desktop {
             display: flex;
-            justify-content: space-between;
+            // gap: 2rem;
             @include contain;
         }
     }
-
 }
