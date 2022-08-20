@@ -67,6 +67,8 @@
 
     &__button {
         min-width: 9.3rem;
+        background-image: url(../../assets/icons/add_comment.svg);
+        @include inputIconPosition;
         @include button;
     }
 

@@ -11,12 +11,11 @@ function Header() {
             </a>
             <form className="header__form">
                 <div className="header__div">
-                    <span className="header__icon--search"></span>
                     <input type="text" name="search" className="header__input" placeholder="Search" />
                     <img className="header__image header__image--mobile" src={Avatar} alt="avatar" />
                 </div>
                 <div className="header__div">
-                    <span className="header__icon--upload"></span>
+                    {/* <span className="header__icon--upload"></span> */}
                     <input type="submit" className="header__button" value="Upload" />
 
                     <img className="header__image header__image--tablet" src={Avatar} alt="avatar" />

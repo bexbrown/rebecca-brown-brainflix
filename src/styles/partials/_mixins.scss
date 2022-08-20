@@ -50,3 +50,9 @@
         width: 2.5rem;
     }
 }
+
+@mixin inputIconPosition {
+    background-position: 0.3rem 0.6rem;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
