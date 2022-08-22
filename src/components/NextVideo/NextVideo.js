@@ -6,7 +6,7 @@ function addElipsis(title) {
             return title.slice(0, i) + "...";
             }
     }
-    }
+}
 
 function checkTitleLength(title) {
     for (let i=0; i<title.length; i++) {
