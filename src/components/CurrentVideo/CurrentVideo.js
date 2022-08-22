@@ -1,9 +1,6 @@
 import "./CurrentVideo.scss";
 
 function CurrentVideo({ image }) {
-    console.log(image);
-
-
     return (
         <div className="video">
             <div className="video__container" >
@@ -13,7 +10,6 @@ function CurrentVideo({ image }) {
             </div>
         </div>
     )
-
 }
 
 export default CurrentVideo;

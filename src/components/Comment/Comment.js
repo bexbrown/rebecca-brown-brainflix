@@ -2,7 +2,6 @@ import "./Comment.scss";
 import createTimestamp from "../utility/utils";
 
 function Comment({ comment }) {
-    console.log(comment);
     return (
         <div className="comment">
             <span className="comment__image"></span>

@@ -26,7 +26,6 @@
         border-top: 2px solid $secondary-grey;
         border-bottom: 2px solid $secondary-grey;
         padding: 1rem 0;
-
         @include tablet {
             justify-content: space-between;
             border-top: none;
