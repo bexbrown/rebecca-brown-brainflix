@@ -1,9 +1,8 @@
 import "./Info.scss";
-import createTimestamp from "../utility/utils";
+import {createTimestamp} from "../../utility/utils";
 
 
 function Info({ currentVideo }) {
-
     return (
         <section className="info">
             <h1 className="info__title">{currentVideo.title}</h1>

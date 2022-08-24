@@ -6,7 +6,7 @@ import { v4 as uuid } from 'uuid';
 
 function Comments({ currentVideo }) {
 
-    let comments = currentVideo.comments
+    let comments = currentVideo.comments;
 
     return (
         <section className="comments">

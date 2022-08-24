@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import uploadImage from "../../assets/images/Upload-video-preview.jpg";
 
 function Upload() {
+
     return (
         <section className="upload">
             <h1 className="upload__title">Upload Video</h1>
@@ -19,9 +20,11 @@ function Upload() {
                         <textarea name="description" id="description" className="upload__input--description" placeholder="Add a description to your video"></textarea>
                     </div>
                     <div className="upload__buttons">
-                        <input type="submit" name="submit" value="Publish" className="upload__button" />
+                        <Link to="/" className="upload__link--submit">
+                            <input type="submit" name="submit" value="Publish" className="upload__button" />
+                        </Link>
                         <Link to="/" className="upload__link">
-                        < span className="upload__cancel">Cancel</span>
+                            < span className="upload__cancel">Cancel</span>
                         </Link>
                     </div>
                 </form>

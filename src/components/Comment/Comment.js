@@ -1,5 +1,5 @@
 import "./Comment.scss";
-import createTimestamp from "../utility/utils";
+import {createTimestamp} from "../../utility/utils";
 
 function Comment({ comment }) {
     return (

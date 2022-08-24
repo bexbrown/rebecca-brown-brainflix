@@ -1,3 +1,4 @@
+
 function createTimestamp(timestamp) {
     let newDate = new Date(timestamp);
     let month = newDate.getMonth() + 1;
@@ -14,4 +15,4 @@ function createTimestamp(timestamp) {
     return month + "/" + day + "/" + year;
 }
 
-export default createTimestamp;
+export {createTimestamp};
