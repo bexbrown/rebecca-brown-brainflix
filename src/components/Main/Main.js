@@ -3,8 +3,6 @@ import CurrentVideo from "../CurrentVideo/CurrentVideo";
 import Info from "../Info/Info";
 import Comments from "../Comments/Comments";
 import NextVideos from "../NextVideos/NextVideos";
-import currentData from "../../data/video-details.json";
-import nextData from "../../data/videos.json";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -16,26 +14,42 @@ function Main() {
 
     const { id } = useParams();
 
-    const [currentVideo, setCurrentVideo] = useState(currentData[0]);
+    const [currentVideo, setCurrentVideo] = useState(null);
+    const [nextVideos, setNextVideos] = useState([]);
 
     useEffect(() => {
         axios
-            .get(API_URL + id + API_KEY)
-            .then(videoResponse => {
-                setCurrentVideo(videoResponse.data);
-            });
-    }, [id]);
+            .get(API_URL + API_KEY)
+            .then(videosResponse => {
+                setNextVideos(videosResponse.data);
 
+                if (!id) {
+                    axios
+                        .get(API_URL + nextVideos[0].id + API_KEY)
+                        .then(videosResponse => {
+                            console.log(videosResponse.data);
+                            setCurrentVideo(videosResponse.data);
+                        })
+                }
+                else {
+                    axios
+                        .get(API_URL + id + API_KEY)
+                        .then(videoResponse => {
+                            setCurrentVideo(videoResponse.data);
+                        })
+                }
+            })
+    }, [id, nextVideos]);
 
+    if (!currentVideo) {
+        return <p>Loading video...</p>
+    }
 
-    // const handleCurrentVideo = (clickedId) => {
+    if (!nextVideos) {
+        return <p>Loading videos...</p>
+    }
 
-    //     const selectedVideo = currentData.find((data) => data.id === clickedId);
-    //     console.log("this:", selectedVideo.id);
-    //     setCurrentVideo(selectedVideo);
-    // }
-
-    const filteredVideos = nextData.filter((video) => video.id !== currentVideo.id)
+    const filteredVideos = nextVideos.filter((video) => video.id !== currentVideo.id)
 
     return (
         <main className="main">
