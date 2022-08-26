@@ -49,14 +49,8 @@
 
     &__button {
         @include button;
-        text-decoration: none;
-        text-transform: uppercase;
+        @include linkButton;
         position: relative;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.83rem;
         margin-bottom: 1.5rem;
 
         @include tablet {

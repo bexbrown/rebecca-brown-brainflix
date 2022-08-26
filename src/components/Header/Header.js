@@ -16,16 +16,12 @@ function Header() {
                         <input type="text" name="search" className="header__input" placeholder="Search" />
                         <img className="header__image header__image--mobile" src={Avatar} alt="avatar" />
                     </div>
-                    <div className="header__div">
-                        <img className="header__image header__image--tablet" src={Avatar} alt="avatar" />
-                    </div>
+
                 </form>
-                <Link
-                    to="/upload"
-                    className="header__button-link"
-                >
-                    <input type="submit" className="header__button" value="Upload" />
+                <Link to="/upload" className="header__button">
+                    Upload
                 </Link>
+                <img className="header__image header__image--tablet" src={Avatar} alt="avatar" />
             </div>
         </header >
     )
