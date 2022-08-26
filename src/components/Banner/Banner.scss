@@ -85,4 +85,8 @@
         transform: rotate(270deg);
         left: 0.1rem;
     }
+
+    &__button:hover {
+        background-color: $secondary-accent;
+    }
 }

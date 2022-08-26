@@ -12,6 +12,7 @@
 
     @include desktop {
         border-left: 2px solid $secondary-grey;
+        padding: 0;
         margin: 0;
     }
 

@@ -7,6 +7,9 @@
     padding-bottom: 1rem;
     border-bottom: 2px solid $secondary-grey;
 
+    @include desktop {
+        border-bottom: none;
+    }
 
     &__header {
         margin-top: 1rem;
@@ -43,6 +46,7 @@
     &__input {
         @include inputTextbox;
         margin: 0 0 1rem 0;
+
         @include tablet {
             height: 2.5rem;
             margin-right: 1.5rem;
