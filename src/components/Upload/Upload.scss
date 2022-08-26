@@ -51,12 +51,14 @@
     &__formfields {
         display: flex;
         flex-direction: column;
+
         @include tablet {
-      
+
             padding-bottom: 1.5rem;
             border-bottom: 2px solid $secondary-grey;
         }
-        @include desktop{
+
+        @include desktop {
             border-bottom: 0;
         }
     }
@@ -82,6 +84,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
         @include tablet {
             flex-direction: row-reverse;
             align-items: flex-start;
@@ -93,27 +96,28 @@
         @include button;
         background-image: url(../../assets/icons/publish.svg);
         @include inputIconPosition;
+
         @include tablet {
             flex-basis: 20%;
         }
-    }
 
-    &__link--submit {
-        width: 100%;
+        @include desktop {
+            flex-basis: 25%;
+        }
     }
 
     &__link {
-        font-size: 0.75rem;
-        text-transform: uppercase;
+        @include link;
         color: $primary-accent;
-        font-weight: 700;
         margin-bottom: 0.5rem;
-        text-decoration: none;
         padding: 2rem 0;
+
         @include tablet {
             flex-basis: 20%;
         }
     }
+}
 
-
+.banner--hide {
+    display: none
 }

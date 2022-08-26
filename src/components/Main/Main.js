@@ -17,7 +17,9 @@ function Main() {
     const [currentVideo, setCurrentVideo] = useState(null);
     const [nextVideos, setNextVideos] = useState([]);
 
+
     useEffect(() => {
+
         axios
             .get(API_URL + API_KEY)
             .then(videosResponse => {
@@ -25,10 +27,9 @@ function Main() {
 
                 if (!id) {
                     axios
-                        .get(API_URL + nextVideos[0].id + API_KEY)
-                        .then(videosResponse => {
-                            console.log(videosResponse.data);
-                            setCurrentVideo(videosResponse.data);
+                        .get(API_URL + videosResponse.data[0].id + API_KEY)
+                        .then(videoResponse => {
+                            setCurrentVideo(videoResponse.data);
                         })
                 }
                 else {
@@ -39,7 +40,7 @@ function Main() {
                         })
                 }
             })
-    }, [id, nextVideos]);
+    }, [id]);
 
     if (!currentVideo) {
         return <p>Loading video...</p>

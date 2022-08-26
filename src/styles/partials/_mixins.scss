@@ -86,3 +86,11 @@
     width: 100%;
     resize: none;
 }
+
+@mixin link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: $primary-accent;
+    font-weight: 700;
+}

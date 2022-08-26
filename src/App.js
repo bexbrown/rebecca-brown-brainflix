@@ -13,7 +13,7 @@ function App() {
         <Route path="/upload" element={<UploadPage />} />
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
 export default App;

@@ -8,7 +8,7 @@ function Header() {
     return (
         <header className="header">
             <div className="header__container">
-                <Link  to="/" className="header__link">
+                <Link to="/" className="header__link">
                     <img src={Logo} alt="brainflix logo" className="header__logo" />
                 </Link>
                 <form className="header__form">
@@ -17,13 +17,15 @@ function Header() {
                         <img className="header__image header__image--mobile" src={Avatar} alt="avatar" />
                     </div>
                     <div className="header__div">
-                        <Link to="/upload" className="header__button-link">
-                            <input type="submit" className="header__button" value="Upload" />
-                        </Link>
-
                         <img className="header__image header__image--tablet" src={Avatar} alt="avatar" />
                     </div>
                 </form>
+                <Link
+                    to="/upload"
+                    className="header__button-link"
+                >
+                    <input type="submit" className="header__button" value="Upload" />
+                </Link>
             </div>
         </header >
     )
