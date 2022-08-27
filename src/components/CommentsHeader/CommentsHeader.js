@@ -2,6 +2,11 @@ import "./CommentsHeader.scss";
 import Avatar from "../../assets/images/Mohan-muruge.jpg";
 
 function CommentsHeader({ numOfComments }) {
+
+    function submitHandler(event) {
+        event.preventDefault();
+    }
+
     return (
         <section className="comments-header">
             <h2 className="comments-header__count">{numOfComments} Comments</h2>
@@ -10,7 +15,8 @@ function CommentsHeader({ numOfComments }) {
                     className="comments-header__image comments-header__image--main" />
                 <div className="comments-header__div">
                     <h2 className="comments-header__heading">Join the Conversation</h2>
-                    <form action="" className="comments-header__form">
+                    <form className="comments-header__form"
+                        onSubmit={submitHandler}>
                         <textarea placeholder="Add a new comment" className="comments-header__input"></textarea>
                         <input type="submit" value="Comment" className="comments-header__button" />
                     </form>

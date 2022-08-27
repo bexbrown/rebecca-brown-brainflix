@@ -6,7 +6,6 @@
     &__content {
         @include desktop {
             display: flex;
-            gap: 0%;
             @include contain;
         }
     }

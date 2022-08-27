@@ -6,6 +6,8 @@ import NextVideos from "../NextVideos/NextVideos";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import NotFound from "../NotFound/NotFound";
+import Loading from "../Loading/Loading";
 
 function Main() {
 
@@ -16,7 +18,7 @@ function Main() {
 
     const [currentVideo, setCurrentVideo] = useState(null);
     const [nextVideos, setNextVideos] = useState([]);
-
+    const [errorStatus, setErrorStatus] = useState(false);
 
     useEffect(() => {
 
@@ -31,6 +33,9 @@ function Main() {
                         .then(videoResponse => {
                             setCurrentVideo(videoResponse.data);
                         })
+                        .catch(error => {
+                            setErrorStatus(true);
+                        })
                 }
                 else {
                     axios
@@ -38,24 +43,35 @@ function Main() {
                         .then(videoResponse => {
                             setCurrentVideo(videoResponse.data);
                         })
+                        .catch(error => {
+                            setErrorStatus(true);
+                        })
                 }
+            })
+            .catch(error => {
+                setErrorStatus(true);
             })
     }, [id]);
 
     if (!currentVideo) {
-        return <p>Loading video...</p>
+        return (
+            <Loading />
+        )
     }
 
     if (!nextVideos) {
-        return <p>Loading videos...</p>
+        return (
+            <Loading />
+        )
     }
 
     const filteredVideos = nextVideos.filter((video) => video.id !== currentVideo.id)
 
     return (
         <main className="main">
+            {errorStatus && <NotFound />}
 
-            <CurrentVideo image={currentVideo.image} />,
+            <CurrentVideo image={currentVideo.image} />
 
             <div className="main__content">
                 <div className="main__comments">
@@ -67,6 +83,7 @@ function Main() {
                     />
                 </div>
                 <NextVideos videos={filteredVideos} />
+
             </div>
         </main>
     )

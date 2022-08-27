@@ -1,7 +1,7 @@
 import "./NextVideos.scss";
 import NextVideo from "../NextVideo/NextVideo";
 
-function NextVideos({ videos, handleCurrentVideo }) {
+function NextVideos({ videos }) {
 
     return (
         <section className="next-videos">
@@ -9,7 +9,7 @@ function NextVideos({ videos, handleCurrentVideo }) {
 
             {videos.map((video) => {
                 return (
-                    <NextVideo key={video.id} video={video} handleCurrentVideo={handleCurrentVideo}></NextVideo>
+                    <NextVideo key={video.id} video={video} ></NextVideo>
                 )
             })}
         </section>

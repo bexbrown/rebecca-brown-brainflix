@@ -53,8 +53,8 @@ function Upload() {
                 </form>
 
             </section >
-            {(uploadStatus === true) ? <Banner className="banner" /> : console.log("no banner")}
-            {/* // <Banner className="banner" /> */}
+
+            {uploadStatus && <Banner className="banner" />}
         </>
 
     )
