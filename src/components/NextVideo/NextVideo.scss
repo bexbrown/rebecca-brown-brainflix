@@ -5,7 +5,7 @@
     margin: 1rem 0;
     display: flex;
     align-items: center;
-    color: $primary-dark;
+    color: $primary-text;
     text-decoration: none;
     cursor: pointer;
 
@@ -19,7 +19,7 @@
     }
 
     &__image {
-        background-color: $secondary-grey;
+        background-color: $secondary-outline;
         border-radius: 4px;
         margin-right: 1rem;
         min-width: 6rem;

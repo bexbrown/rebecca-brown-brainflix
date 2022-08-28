@@ -5,7 +5,7 @@
 .comments-header {
 
     padding-bottom: 1rem;
-    border-bottom: 2px solid $secondary-grey;
+    border-bottom: 2px solid $secondary-outline;
 
     @include desktop {
         border-bottom: none;
@@ -19,7 +19,6 @@
     &__heading {
         @include label;
     }
-
 
     &__image {
 
@@ -54,11 +53,15 @@
     }
 
     &__input::placeholder {
-        color: $secondary-dark;
+        color: $secondary-video;
     }
 
     &__input:focus {
-        outline: 2px solid $primary-accent;
+        outline: 2px solid $primary-CTA;
+    }
+
+    &__input--invalid {
+        outline: 2px solid red;
     }
 
     &__button {
@@ -69,6 +72,6 @@
     }
 
     &button:hover {
-        background-color: $secondary-accent;
+        background-color: $secondary-CTA;
     }
 }

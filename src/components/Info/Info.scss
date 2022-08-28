@@ -24,8 +24,8 @@
         line-height: 1.125rem;
         font-weight: 400;
         align-items: center;
-        border-top: 2px solid $secondary-grey;
-        border-bottom: 2px solid $secondary-grey;
+        border-top: 2px solid $secondary-outline;
+        border-bottom: 2px solid $secondary-outline;
         padding: 1rem 0;
 
         @include tablet {
@@ -71,12 +71,12 @@
     }
 
     &__timestamp {
-        color: $primary-grey;
+        color: $primary-label;
     }
 
     &__icon {
         display: inline-block;
-        color: $primary-grey;
+        color: $primary-label;
         height: 1rem;
         width: 1rem;
         background-size: contain;
@@ -96,7 +96,7 @@
 
     &__views {
         padding-bottom: 0.5rem;
-        color: $primary-grey;
+        color: $primary-label;
 
         @include tablet {
             padding-bottom: 0;
@@ -105,7 +105,7 @@
     }
 
     &__likes {
-        color: $primary-grey;
+        color: $primary-label;
     }
 
     &__stat {

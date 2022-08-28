@@ -4,14 +4,15 @@ import Comment from "../Comment/Comment";
 import { v4 as uuid } from 'uuid';
 
 
-function Comments({ currentVideo }) {
+function Comments({ currentVideo, postComment }) {
 
     let comments = currentVideo.comments;
 
     return (
         <section className="comments">
-            <CommentsHeader numOfComments={currentVideo.comments.length} />
-
+            <CommentsHeader
+                numOfComments={currentVideo.comments.length}
+                postComment={postComment} />
             {
                 comments.map((comment) => {
                     return <Comment key={uuid()} comment={comment} />

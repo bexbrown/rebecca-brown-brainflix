@@ -4,8 +4,8 @@
 
 .banner {
 
-    background-color: $primary-light;
-    border-bottom: 2px solid $secondary-grey;
+    background-color: $primary-bg;
+    border-bottom: 2px solid $secondary-outline;
     position: fixed;
     top: 0;
     width: 100%;
@@ -87,6 +87,6 @@
     }
 
     &__button:hover {
-        background-color: $secondary-accent;
+        background-color: $secondary-CTA;
     }
 }

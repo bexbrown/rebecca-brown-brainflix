@@ -19,6 +19,33 @@ function Main() {
     const [currentVideo, setCurrentVideo] = useState(null);
     const [nextVideos, setNextVideos] = useState([]);
     const [errorStatus, setErrorStatus] = useState(false);
+    const [commentPosted, setCommentPosted] = useState(false);
+
+
+    const postComment = (postBody) => {
+
+        let currentVid = currentVideo;
+
+        axios
+            .post(API_URL + currentVideo.id + "/comments" + API_KEY, postBody)
+            .then(response => {
+                let comment = response.data;
+
+                let commentArray = [];
+                currentVideo.comments.map((comment) => {
+                    return commentArray.push(comment);
+                })
+                currentVid.comments.push(comment);
+                setCurrentVideo(currentVid);
+                setCommentPosted(true);
+
+            })
+
+            .catch(error => {
+                setErrorStatus(true);
+            })
+        setCommentPosted(false);
+    }
 
     useEffect(() => {
 
@@ -32,6 +59,7 @@ function Main() {
                         .get(API_URL + videosResponse.data[0].id + API_KEY)
                         .then(videoResponse => {
                             setCurrentVideo(videoResponse.data);
+
                         })
                         .catch(error => {
                             setErrorStatus(true);
@@ -42,6 +70,7 @@ function Main() {
                         .get(API_URL + id + API_KEY)
                         .then(videoResponse => {
                             setCurrentVideo(videoResponse.data);
+
                         })
                         .catch(error => {
                             setErrorStatus(true);
@@ -51,7 +80,7 @@ function Main() {
             .catch(error => {
                 setErrorStatus(true);
             })
-    }, [id]);
+    }, [id, commentPosted]);
 
     if (!currentVideo) {
         return (
@@ -80,6 +109,7 @@ function Main() {
                     />,
                     <Comments
                         currentVideo={currentVideo}
+                        postComment={postComment}
                     />
                 </div>
                 <NextVideos videos={filteredVideos} />

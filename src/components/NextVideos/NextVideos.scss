@@ -11,14 +11,14 @@
     }
 
     @include desktop {
-        border-left: 2px solid $secondary-grey;
+        border-left: 2px solid $secondary-outline;
         padding: 1.5rem 0 3rem 0;
         margin: 0;
     }
 
     &__heading {
         text-transform: uppercase;
-        color: $primary-grey;
+        color: $primary-label;
         font-weight: 700;
 
         @include desktop {

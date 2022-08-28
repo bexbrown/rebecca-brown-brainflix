@@ -5,7 +5,7 @@
 
     display: flex;
 
-    border-bottom: 2px solid $secondary-grey;
+    border-bottom: 2px solid $secondary-outline;
 
     @include tablet {
         padding: 0.5rem 0;
@@ -15,7 +15,7 @@
         @include contain;
 
         border-bottom: none;
-        border-top: 2px solid $secondary-grey;
+        border-top: 2px solid $secondary-outline;
         padding-bottom: 1rem;
     }
 
@@ -47,7 +47,7 @@
     }
 
     &__date {
-        color: $primary-grey;
+        color: $primary-label;
         font-size: 0.8125rem;
         line-height: 1.125rem;
         font-weight: 400;

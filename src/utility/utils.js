@@ -15,4 +15,4 @@ function createTimestamp(timestamp) {
     return month + "/" + day + "/" + year;
 }
 
-export {createTimestamp};
+export { createTimestamp };
