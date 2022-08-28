@@ -38,7 +38,6 @@ function Main() {
                 currentVid.comments.push(comment);
                 setCurrentVideo(currentVid);
                 setCommentPosted(true);
-
             })
 
             .catch(error => {
@@ -83,15 +82,11 @@ function Main() {
     }, [id, commentPosted]);
 
     if (!currentVideo) {
-        return (
-            <Loading />
-        )
+        return <Loading />
     }
 
     if (!nextVideos) {
-        return (
-            <Loading />
-        )
+        return <Loading />
     }
 
     const filteredVideos = nextVideos.filter((video) => video.id !== currentVideo.id)
@@ -105,12 +100,10 @@ function Main() {
             <div className="main__content">
                 <div className="main__comments">
                     <Info
-                        currentVideo={currentVideo}
-                    />,
+                        currentVideo={currentVideo} />
                     <Comments
                         currentVideo={currentVideo}
-                        postComment={postComment}
-                    />
+                        postComment={postComment} />
                 </div>
                 <NextVideos videos={filteredVideos} />
 

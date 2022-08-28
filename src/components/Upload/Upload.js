@@ -4,9 +4,6 @@ import uploadImage from "../../assets/images/Upload-video-preview.jpg";
 import Banner from "../Banner/Banner";
 import { useState } from "react";
 
-
-
-
 function Upload() {
 
     const [uploadStatus, setUploadStatus] = useState(false);

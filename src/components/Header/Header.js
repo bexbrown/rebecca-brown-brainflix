@@ -15,14 +15,11 @@ function Header() {
                     <img src={Logo} alt="brainflix logo" className="header__logo" />
                 </Link>
                 <form className="header__form"
-                    onSubmit={submitHandler}
-
-                >
+                    onSubmit={submitHandler}>
                     <div className="header__div">
                         <input type="text" name="search" className="header__input" placeholder="Search" />
                         <img className="header__image header__image--mobile" src={Avatar} alt="avatar" />
                     </div>
-
                 </form>
                 <Link to="/upload" className="header__button">
                     Upload

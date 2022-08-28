@@ -15,19 +15,15 @@
         padding: 1rem 1.5rem;
     }
 
-
-
     &__container {
         display: flex;
         flex-direction: column;
         align-items: center;
 
-
         @include tablet {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-
         }
 
         @include desktop {
@@ -62,12 +58,10 @@
         }
     }
 
-
     &__button {
         @include button;
         @include linkButton;
         position: relative;
-
 
         @include tablet {
             margin-bottom: 0;

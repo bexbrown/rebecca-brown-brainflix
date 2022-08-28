@@ -5,9 +5,6 @@ import Avatar from "../../assets/images/Mohan-muruge.jpg";
 
 function CommentsHeader({ numOfComments, postComment }) {
 
-
-    // const [formIsValid, setFormIsValid] = useState(true);
-
     function formValidation(event, postBody) {
         if (event.target.comment.value.length < 2) {
             event.target.comment.classList.add("comments-header__input--invalid");
@@ -21,7 +18,6 @@ function CommentsHeader({ numOfComments, postComment }) {
 
     function submitHandler(event) {
         event.preventDefault();
-
         let comment = event.target.comment.value;
         let name = 'BrainFlix User';
         let postBody = {
@@ -39,8 +35,6 @@ function CommentsHeader({ numOfComments, postComment }) {
                     className="comments-header__image comments-header__image--main" />
                 <div className="comments-header__div">
                     <h2 className="comments-header__heading">Join the Conversation</h2>
-
-
                     <form className="comments-header__form"
                         onSubmit={submitHandler}>
                         <textarea
@@ -49,13 +43,10 @@ function CommentsHeader({ numOfComments, postComment }) {
                             name="comment"></textarea>
                         <input type="submit" value="Comment" className="comments-header__button" />
                     </form>
-
-
                 </div>
             </div>
         </section>
     )
 }
-
 
 export default CommentsHeader;

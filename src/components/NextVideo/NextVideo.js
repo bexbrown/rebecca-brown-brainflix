@@ -19,12 +19,11 @@ function checkTitleLength(title) {
     }
 }
 
+function clickHandler() {
+    window.scrollTo(0, 0);
+}
+
 function NextVideo({ video }) {
-
-    function clickHandler() {
-        window.scrollTo(0, 0);
-    }
-
     return (
         <Link to={`/videos/${video.id}`} className="next-video" onClick={clickHandler}>
             <img src={video.image} alt="next video placeholder" className="next-video__image" />
@@ -32,7 +31,6 @@ function NextVideo({ video }) {
                 <h2 className="next-video__title">{checkTitleLength(video.title)}</h2>
                 <span className="next-video__channel">{video.channel}</span>
             </div>
-            {/* </section> */}
         </Link>
     )
 }
