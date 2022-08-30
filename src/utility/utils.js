@@ -15,4 +15,7 @@ function createTimestamp(timestamp) {
     return month + "/" + day + "/" + year;
 }
 
+// function uploadVideo (postBody) {
+
+// }
 export { createTimestamp };

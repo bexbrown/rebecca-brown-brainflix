@@ -3,14 +3,35 @@ import { Link } from "react-router-dom";
 import uploadImage from "../../assets/images/Upload-video-preview.jpg";
 import Banner from "../Banner/Banner";
 import { useState } from "react";
+// import axios from "axios";
 
 function Upload() {
 
     const [uploadStatus, setUploadStatus] = useState(false);
 
+    // function uploadVideo(postBody) {
+
+    // }
+
+    function formValidation(event, postBody) {
+        // if (event.target.content.value.length < 2) {
+        //     event.target.content.classList.add("comments-header__input--invalid");
+        //     return;
+        // } else {
+        //     event.target.comment.classList.remove("comments-header__input--invalid");
+        // }
+        // uploadVideo(postBody);
+        event.target.reset();
+    }
+
     const submitHandler = (event) => {
         event.preventDefault();
         setUploadStatus(true);
+        let postBody = {
+            title: event.target.title,
+            content: event.target.content,
+        }
+        formValidation(event, postBody);
     }
 
     return (
@@ -58,3 +79,18 @@ function Upload() {
 }
 
 export default Upload;
+
+// function uploadVideo(postBody) {
+//     axios
+//         .post("http://localhost:8080/videos/" + currentVideo.id + "/videos", postBody)
+//         .then(response => {
+//             let videos = response.data;
+
+//             let videosArray = videos.map((video) => {
+//                 return video;
+//             })
+//             videosArray.push(videos);
+
+//         })
+
+// }

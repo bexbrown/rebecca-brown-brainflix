@@ -11,9 +11,6 @@ import Loading from "../Loading/Loading";
 
 function Main() {
 
-    const API_URL = "https://project-2-api.herokuapp.com/videos/";
-    const API_KEY = "?api_key=a35b16e2-add7-4cee-ab5b-bdab22f566ec";
-
     const { id } = useParams();
 
     const [currentVideo, setCurrentVideo] = useState(null);
@@ -27,7 +24,7 @@ function Main() {
         let currentVid = currentVideo;
 
         axios
-            .post(API_URL + currentVideo.id + "/comments" + API_KEY, postBody)
+            .post("http://localhost:8080/videos/" + currentVideo.id + "/comments", postBody)
             .then(response => {
                 let comment = response.data;
 
@@ -46,16 +43,17 @@ function Main() {
         setCommentPosted(false);
     }
 
+
     useEffect(() => {
 
         axios
-            .get(API_URL + API_KEY)
-            .then(videosResponse => {
+            .get("http://localhost:8080/videos")
+            .then((videosResponse) => {
                 setNextVideos(videosResponse.data);
 
                 if (!id) {
                     axios
-                        .get(API_URL + videosResponse.data[0].id + API_KEY)
+                        .get("http://localhost:8080/videos/" + videosResponse.data[0].id)
                         .then(videoResponse => {
                             setCurrentVideo(videoResponse.data);
 
@@ -66,7 +64,7 @@ function Main() {
                 }
                 else {
                     axios
-                        .get(API_URL + id + API_KEY)
+                        .get("http://localhost:8080/videos/" + id)
                         .then(videoResponse => {
                             setCurrentVideo(videoResponse.data);
 
