@@ -9,12 +9,15 @@ import axios from "axios";
 import NotFound from "../NotFound/NotFound";
 import Loading from "../Loading/Loading";
 
+
 function Main() {
 
     const { id } = useParams();
 
     const [currentVideo, setCurrentVideo] = useState(null);
     const [nextVideos, setNextVideos] = useState([]);
+
+
     const [errorStatus, setErrorStatus] = useState(false);
     const [commentPosted, setCommentPosted] = useState(false);
 
@@ -24,7 +27,7 @@ function Main() {
         let currentVid = currentVideo;
 
         axios
-            .post("http://localhost:8080/videos/" + currentVideo.id + "/comments", postBody)
+            .post("http://localhost:8000/videos/" + currentVideo.id + "/comments", postBody)
             .then(response => {
                 let comment = response.data;
 
@@ -43,20 +46,19 @@ function Main() {
         setCommentPosted(false);
     }
 
-
     useEffect(() => {
 
         axios
-            .get("http://localhost:8080/videos")
+            .get("http://localhost:8000/videos")
             .then((videosResponse) => {
                 setNextVideos(videosResponse.data);
 
+
                 if (!id) {
                     axios
-                        .get("http://localhost:8080/videos/" + videosResponse.data[0].id)
+                        .get("http://localhost:8000/videos/" + videosResponse.data[0].id)
                         .then(videoResponse => {
                             setCurrentVideo(videoResponse.data);
-
                         })
                         .catch(error => {
                             setErrorStatus(true);
@@ -64,7 +66,7 @@ function Main() {
                 }
                 else {
                     axios
-                        .get("http://localhost:8080/videos/" + id)
+                        .get("http://localhost:8000/videos/" + id)
                         .then(videoResponse => {
                             setCurrentVideo(videoResponse.data);
 

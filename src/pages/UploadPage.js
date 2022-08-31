@@ -1,11 +1,11 @@
 import Header from "../components/Header/Header";
 import Upload from "../components/Upload/Upload";
 
-function UploadPage() {
+function UploadPage({ currentVideo, setCurrentVideo, nextVideos, setNextVideos }) {
     return (
         <>
             <Header />
-            <Upload />
+            <Upload setNextVideos={setNextVideos} />
         </>
     )
 }
