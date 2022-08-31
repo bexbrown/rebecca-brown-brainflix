@@ -2,12 +2,12 @@
 import Header from "../components/Header/Header";
 import Main from "../components/Main/Main";
 
-function HomePage() {
+function HomePage({ currentVideo, setCurrentVideo, nextVideos, setNextVideos }) {
 
     return (
         <>
             <Header />
-            <Main />
+            <Main setCurrentVideo={setCurrentVideo} setNextVideos={setNextVideos} currentVideo={currentVideo} nextVideos={nextVideos} />
         </>
     )
 }
