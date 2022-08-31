@@ -2,9 +2,13 @@ import './App.scss';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import UploadPage from "./pages/UploadPage";
-import NotFoundPage from "./pages/NotFoundPage"
+import NotFoundPage from "./pages/NotFoundPage";
+
+
 
 function App() {
+
+  console.log(process.env);
 
   return (
     <BrowserRouter>

@@ -4,14 +4,10 @@ import NotFound from "../components/NotFound/NotFound";
 
 function NotFoundPage() {
 
-
-
     return (
-
         <>
             <Header />
             <NotFound />
-
         </>
     )
 }
