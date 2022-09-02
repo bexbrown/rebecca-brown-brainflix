@@ -16,8 +16,6 @@ function Main() {
 
     const [currentVideo, setCurrentVideo] = useState(null);
     const [nextVideos, setNextVideos] = useState([]);
-
-
     const [errorStatus, setErrorStatus] = useState(false);
     const [commentPosted, setCommentPosted] = useState(false);
 
@@ -41,7 +39,7 @@ function Main() {
             })
 
             .catch(error => {
-
+                console.error(error);
                 setErrorStatus(true);
             })
         setCommentPosted(false);
@@ -62,6 +60,7 @@ function Main() {
                             setCurrentVideo(videoResponse.data);
                         })
                         .catch(error => {
+                            console.error(error);
                             setErrorStatus(true);
                         })
                 }
@@ -73,11 +72,13 @@ function Main() {
 
                         })
                         .catch(error => {
+                            console.error(error);
                             setErrorStatus(true);
                         })
                 }
             })
             .catch(error => {
+                console.error(error);
                 setErrorStatus(true);
             })
     }, [id, commentPosted]);

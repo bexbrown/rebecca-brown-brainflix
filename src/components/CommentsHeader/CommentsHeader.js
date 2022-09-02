@@ -1,33 +1,42 @@
 import "./CommentsHeader.scss";
 import Avatar from "../../assets/images/Mohan-muruge.jpg";
-// import useState from "react";
+import { useState } from "react";
 
 
 function CommentsHeader({ numOfComments, postComment }) {
 
+
+
+    const [inputClass, setInputClass] = useState("comments-header__input");
+    const [isInvalid, setIsInvalid] = useState(false);
+
     function formValidation(event, postBody) {
-        if (event.target.comment.value.length < 2) {
-            event.target.comment.classList.add("comments-header__input--invalid");
+        if (event.target.comment.value.length < 3) {
+            setInputClass("comments-header__input--invalid");
+            setIsInvalid(true);
             return;
         } else {
-            event.target.comment.classList.remove("comments-header__input--invalid");
+            setInputClass("comments-header__input");
+            setIsInvalid(false);
         }
+
         postComment(postBody);
         event.target.reset();
     }
 
     function submitHandler(event) {
         event.preventDefault();
-        let comment = event.target.comment.value;
+        let commentText = event.target.comment.value;
         let name = 'BrainFlix User';
         let postBody = {
             "name": name,
-            "comment": comment,
+            "comment": commentText,
         }
         formValidation(event, postBody);
     }
 
     return (
+
         <section className="comments-header">
             <h2 className="comments-header__count">{numOfComments} Comments</h2>
             <div className="comments-header__header">
@@ -39,10 +48,11 @@ function CommentsHeader({ numOfComments, postComment }) {
                         onSubmit={submitHandler}>
                         <textarea
                             placeholder="Add a new comment"
-                            className="comments-header__input"
+                            className={inputClass}
                             name="comment"></textarea>
                         <input type="submit" value="Comment" className="comments-header__button" />
                     </form>
+                    {isInvalid && <span>Comment must be at least 3 characters.</span>}
                 </div>
             </div>
         </section>
