@@ -41,6 +41,7 @@ function Main() {
             })
 
             .catch(error => {
+
                 setErrorStatus(true);
             })
         setCommentPosted(false);

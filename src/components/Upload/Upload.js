@@ -19,7 +19,7 @@ function Upload() {
                 let newVideo = response.data;
 
                 axios
-                    .get("http://localhost:8000/videos/")
+                    .get("http://localhost:8000/videos")
                     .then(videosResponse => {
                         let videos = videosResponse.data;
                         let videosArray = videos.map((video) => {
