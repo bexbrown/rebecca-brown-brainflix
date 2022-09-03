@@ -1,7 +1,6 @@
 import "./Info.scss";
 import { createTimestamp } from "../../utility/utils";
 
-
 function Info({ currentVideo }) {
     return (
         <section className="info">

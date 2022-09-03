@@ -11,7 +11,7 @@ function Banner() {
                     <img src={Logo} alt="brainflix logo" className="banner__logo" />
                 </Link>
                 <div className="banner__content">
-                    <span className="banner__text">Your video uploaded sucessfully!</span>
+                    <span className="banner__text">Your video sucessfully uploaded.</span>
                     <Link to="/" className="banner__button">
                         Go to videos
                     </Link>

@@ -6,7 +6,14 @@
     &__content {
         @include desktop {
             display: flex;
+            justify-content: space-between;
             @include contain;
+        }
+    }
+
+    &__comments {
+        @include desktop {
+            width: 100%;
         }
     }
 }

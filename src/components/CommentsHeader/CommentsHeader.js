@@ -5,8 +5,6 @@ import { useState } from "react";
 
 function CommentsHeader({ numOfComments, postComment }) {
 
-
-
     const [inputClass, setInputClass] = useState("comments-header__input");
     const [isInvalid, setIsInvalid] = useState(false);
 
@@ -19,7 +17,6 @@ function CommentsHeader({ numOfComments, postComment }) {
             setInputClass("comments-header__input");
             setIsInvalid(false);
         }
-
         postComment(postBody);
         event.target.reset();
     }
@@ -36,7 +33,6 @@ function CommentsHeader({ numOfComments, postComment }) {
     }
 
     return (
-
         <section className="comments-header">
             <h2 className="comments-header__count">{numOfComments} Comments</h2>
             <div className="comments-header__header">

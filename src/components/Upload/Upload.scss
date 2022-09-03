@@ -50,9 +50,13 @@
         border-radius: 4px;
         background-color: $secondary-outline;
 
+        @include tablet {
+            width: 50%;
+            object-fit: contain;
+        }
+
         @include desktop {
             width: 20rem;
-            object-fit: contain;
             margin-right: 1.5rem;
         }
     }

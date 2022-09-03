@@ -6,11 +6,9 @@ import Banner from "../Banner/Banner";
 import { useState } from "react";
 import axios from "axios";
 
-// { setNextVideos }
 function Upload() {
 
     const [, setNextVideos] = useState([]);
-
     const [uploadStatus, setUploadStatus] = useState(false);
     const [errorStatus, setErrorStatus] = useState(false);
 
@@ -38,12 +36,10 @@ function Upload() {
             })
             .catch(error => {
                 console.log(error);
-                setErrorStatus(true);
             })
-
     }
 
-    function formValidation(event, postBody) {
+    function formValidation(postBody, event) {
         uploadVideo(postBody);
         event.target.reset();
     }
@@ -55,7 +51,7 @@ function Upload() {
             title: event.target.title.value,
             description: event.target.value,
         }
-        formValidation(event, postBody);
+        formValidation(postBody, event);
     }
 
     return (
@@ -63,7 +59,6 @@ function Upload() {
             {errorStatus && <NotFound />}
             <section className="upload">
                 <h1 className="upload__title">Upload Video</h1>
-
                 <form className="upload__form"
                     onSubmit={submitHandler} >
                     <div className="upload__container">
@@ -75,7 +70,6 @@ function Upload() {
                             <div className="upload__formfields">
                                 <label htmlFor="title" className="upload__subheading">Title your video</label>
                                 <input type="text" name="title" id="title" placeholder="Add a title to your video" className="upload__input--title" />
-                                {/* {isInvalid && <span>Title must be at least 3 characters.</span>} */}
                                 <label htmlFor="description" className="upload__subheading">Add a video description</label>
                                 <textarea name="description" id="description" className="upload__input--description" placeholder="Add a description to your video"></textarea>
                             </div>
@@ -86,21 +80,15 @@ function Upload() {
                             type="submit"
                             name="submit"
                             value="Publish"
-                            className="upload__button"
-                        />
-
+                            className="upload__button" />
                         <Link to="/" className="upload__link">
                             Cancel
                         </Link>
                     </div>
-
                 </form>
-
             </section >
-
             {uploadStatus && <Banner className="banner" />}
         </>
-
     )
 }
 

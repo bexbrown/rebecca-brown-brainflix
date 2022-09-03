@@ -13,10 +13,9 @@ function Comments({ currentVideo, postComment }) {
             <CommentsHeader
                 numOfComments={currentVideo.comments.length}
                 postComment={postComment} />
-            {
-                comments.map((comment) => {
-                    return <Comment key={uuid()} comment={comment} />
-                })
+            {comments.map((comment) => {
+                return <Comment key={uuid()} comment={comment} />
+            })
             }
         </section>
     )

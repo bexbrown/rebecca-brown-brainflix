@@ -13,12 +13,10 @@ import Loading from "../Loading/Loading";
 function Main() {
 
     const { id } = useParams();
-
     const [currentVideo, setCurrentVideo] = useState(null);
     const [nextVideos, setNextVideos] = useState([]);
     const [errorStatus, setErrorStatus] = useState(false);
     const [commentPosted, setCommentPosted] = useState(false);
-
 
     const postComment = (postBody) => {
 
@@ -28,7 +26,6 @@ function Main() {
             .post("http://localhost:8000/videos/" + currentVideo.id + "/comments", postBody)
             .then(response => {
                 let comment = response.data;
-
                 let commentArray = [];
                 currentVideo.comments.map((comment) => {
                     return commentArray.push(comment);
@@ -37,7 +34,6 @@ function Main() {
                 setCurrentVideo(currentVid);
                 setCommentPosted(true);
             })
-
             .catch(error => {
                 console.error(error);
                 setErrorStatus(true);
@@ -46,13 +42,10 @@ function Main() {
     }
 
     useEffect(() => {
-
         axios
             .get("http://localhost:8000/videos")
             .then((videosResponse) => {
                 setNextVideos(videosResponse.data);
-
-
                 if (!id) {
                     axios
                         .get("http://localhost:8000/videos/" + videosResponse.data[0].id)
@@ -91,7 +84,7 @@ function Main() {
         return <Loading />
     }
 
-    const filteredVideos = nextVideos.filter((video) => video.id !== currentVideo.id)
+    const filteredVideos = nextVideos.filter((video) => video.id !== currentVideo.id);
 
     return (
         <main className="main">

@@ -4,6 +4,7 @@ import Logo from "../../assets/logos/BrainFlix-logo.svg";
 import Avatar from "../../assets/images/Mohan-muruge.jpg";
 
 function Header() {
+
     function submitHandler(event) {
         event.preventDefault();
     }
